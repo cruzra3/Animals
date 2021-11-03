@@ -1,7 +1,8 @@
-package com.example.android.animals
+package com.example.android.animals.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.android.animals.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
