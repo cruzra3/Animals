@@ -5,7 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.NavDirections
+import androidx.navigation.Navigation
 import com.example.android.animals.R
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class DetailFragment : Fragment() {
 
@@ -15,6 +18,21 @@ class DetailFragment : Fragment() {
     ): View? {
 
         return inflater.inflate(R.layout.fragment_detail, container, false)
+    }
+
+    @Override
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // my invention start
+        val buttonList: FloatingActionButton
+        buttonList = view.findViewById(R.id.buttonList) as FloatingActionButton
+        // my invention end
+
+        buttonList.setOnClickListener {
+            val action: NavDirections = DetailFragmentDirections.actionList()
+            Navigation.findNavController(it).navigate(action)
+        }
     }
 
 }
