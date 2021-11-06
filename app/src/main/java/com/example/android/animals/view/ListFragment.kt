@@ -19,19 +19,4 @@ class ListFragment : Fragment() {
         return inflater.inflate(com.example.android.animals.R.layout.fragment_list, container, false)
     }
 
-    @Override
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        // my invention start
-        val buttonDetail: FloatingActionButton
-        buttonDetail = view.findViewById(R.id.buttonDetail) as FloatingActionButton
-        // my invention end
-
-        buttonDetail.setOnClickListener {
-            val action: NavDirections = ListFragmentDirections.actionDetail()
-            Navigation.findNavController(it).navigate(action)
-       }
-    }
-
 }
